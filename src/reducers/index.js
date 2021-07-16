@@ -24,7 +24,7 @@ export const initialState = {
         }
       ],
       loading: null,
-      error: 'This is not working'
+      error: ""
     }
 
 const reducer = (state = initialState, action)=>{
@@ -32,13 +32,15 @@ const reducer = (state = initialState, action)=>{
         case (START_FETCH):
             return({
                 ...state,
-                loading: true
+                loading: true,
+                error: ""
             });
         case (FETCH_SUCCESSFUL):
             return ({
                 ...state,
-                smurfs: "new aarray",
-                loading: null
+                smurfs: action.payload,
+                loading: false,
+                error: ""
             });
         case (FETCH_FAILED):
             return ({

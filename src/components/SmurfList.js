@@ -1,9 +1,13 @@
 import React from 'react';
 import Smurf from './Smurf';
 import { connect } from 'react-redux';
+import { useEffect } from 'react';
+
 
  const SmurfList = (props)=> {
      console.log(props);
+     useEffect(()=>{
+     }, []);
     const { isLoading, smurfs } = props;
 
     if (isLoading) {
@@ -21,6 +25,7 @@ const mapStateToProps = (state) => {
       isLoading: state.loading,
     }
   }
+
   
   export default connect(mapStateToProps)(SmurfList);
 

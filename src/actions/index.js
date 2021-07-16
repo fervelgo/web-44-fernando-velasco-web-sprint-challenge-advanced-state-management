@@ -7,6 +7,24 @@ export const FETCH_FAILED = "FETCH_FAILED";
 export const ADD_SMURF = "ADD_SMURF"; 
 export const SET_ERROR_MESSAGE = "SET_ERROR_MESSAGE";
 
+export const startFetch = () => {
+    return({
+        type: START_FETCH
+    })
+}
+
+export const fetchSuccessful = () => {
+    return({
+        type: FETCH_SUCCESSFUL
+    })
+}
+
+export const fetchFailed = () => {
+    return({
+        type: FETCH_FAILED
+    })
+}
+
 export const addSmurf = (newSmurf) => {
     return({
         type: ADD_SMURF,
@@ -14,7 +32,7 @@ export const addSmurf = (newSmurf) => {
     });
 }
 
-export const setErrorMessage = (newErrorMessage) => {
+export const setError = (newErrorMessage) => {
     return({
         type: SET_ERROR_MESSAGE,
         payload: newErrorMessage
